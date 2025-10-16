@@ -1,0 +1,101 @@
+/* 🎨 Fondo animado con gradientes en movimiento */
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4adede, #f7f779);
+  background-size: 800% 800%;
+  animation: fondoAnimado 10s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comic Sans MS', cursive;
+  color: white;
+  overflow: hidden;
+}
+
+/* ✨ Animación del fondo */
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 💫 Efecto de estrellas o textura ligera */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 200%;
+  height: 200%;
+  background: url('https://www.transparenttextures.com/patterns/tiny-crosshatch.png');
+  opacity: 0.15;
+  animation: brilla 5s infinite alternate;
+}
+
+@keyframes brilla {
+  from { opacity: 0.1; }
+  to { opacity: 0.3; }
+}
+
+/* 🌟 Caja central con efecto de vidrio brillante */
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255,255,255,0.4);
+  backdrop-filter: blur(8px);
+}
+
+/* ✨ Título con brillo animado */
+h1 {
+  font-size: 3em;
+  text-shadow: 0 0 15px #fff, 0 0 25px #ff00ff;
+  animation: brillaTexto 3s ease-in-out infinite alternate;
+}
+
+@keyframes brillaTexto {
+  from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff; }
+  to { text-shadow: 0 0 25px #fff, 0 0 35px #00ffff; }
+}
+
+/* 🌈 Botón con animación y colores cambiantes */
+button {
+  margin-top: 20px;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2em;
+  color: white;
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffff);
+  background-size: 300% 300%;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  animation: botonBrillo 4s ease infinite;
+  transition: transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes botonBrillo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌠 Burbujas flotando */
+.burbuja {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  animation: subir 10s linear infinite;
+}
+
+@keyframes subir {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+}
